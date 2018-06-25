@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  start_time: 2018-06-24 22:00:49
+  end_time: 2018-06-24 22:00:49
+  steps: 1
+  calories: 1
+
+two:
+  type: 
+  start_time: 2018-06-24 22:00:49
+  end_time: 2018-06-24 22:00:49
+  steps: 1
+  calories: 1

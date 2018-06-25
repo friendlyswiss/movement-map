@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place_id: 1
+  start_time: 2018-06-24 21:44:19
+  end_time: 2018-06-24 21:44:19
+
+two:
+  place_id: 1
+  start_time: 2018-06-24 21:44:19
+  end_time: 2018-06-24 21:44:19
