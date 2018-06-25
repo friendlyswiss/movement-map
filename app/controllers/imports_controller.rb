@@ -24,27 +24,27 @@ class ImportsController < ApplicationController
   	    
   	    if segment['type'] == 'place'
 
-  	      #Create new point feature
-          place_segment = PlaceSegment.new
+  	      #Create new stay object
+          stay = Stay.new
 
-  	      place_segment.start_time = segment['startTime']
-          place_segment.end_time = segment['endTime']
+  	      stay.start_time = segment['startTime']
+          stay.end_time = segment['endTime']
 
-          place_segment['activities'].each { |activity| 
+          segment['activities'].each { |act| 
     
             #Create a new activity object
             activity = Activity.new
 
-            activity.type = activity['activity']
-            activity.start_time = activity['startTime']
-            activity.end_time = activity['endTime']
-            activity.steps = activity['steps']
-            activity.calories = activity['calories']
+            activity.type = act['activity']
+            activity.start_time = act['startTime']
+            activity.end_time = act['endTime']
+            activity.steps = act['steps']
+            activity.calories = act['calories']
 
             activity.save
           }
 
-          place_segment.place_id = segment['place']['id']
+          stay.place_id = segment['place']['id']
 
           #Unless a place with this ID already exists, add a new one
           #By checking only for existence of a place ID, changes made to 
@@ -67,7 +67,7 @@ class ImportsController < ApplicationController
           end
 
           #Save the place segment object to the database
-          place_segment.save
+          stay.save
 
         elsif segment['type'] == 'move'
 
